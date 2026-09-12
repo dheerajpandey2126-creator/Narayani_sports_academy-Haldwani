@@ -4,1393 +4,3407 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Narayani Sports & Fitness Academy - Haldwani | Train Hard • Stay Fit • Become Unstoppable</title>
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        :root {
-            --primary-orange: #FF6B35;
-            --secondary-orange: #FF8C42;
-            --dark-blue: #1A237E;
-            --black: #0A0A0A;
-            --white: #FFFFFF;
-            --glass-bg: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
-            --shadow-glow: 0 20px 40px rgba(255, 107, 53, 0.3);
-        }
+<!-- SEO -->
+<meta name="description" content="Narayani Sports & Fitness Academy in Haldwani. Professional volleyball, football and calisthenics training. Train Hard • Stay Fit • Become Unstoppable.">
+<meta name="keywords" content="Narayani Sports Academy, Haldwani sports academy, volleyball academy Haldwani, football academy Haldwani, calisthenics Haldwani">
+<meta name="author" content="Narayani Sports & Fitness Academy">
 
-        [data-theme="dark"] {
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
-        }
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-            background: #0a0a0a;
-            color: var(--white);
-            cursor: none;
-        }
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        /* Custom Cursor */
-        .cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background: var(--primary-orange);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.1s ease;
-            mix-blend-mode: difference;
-        }
+<!-- Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-        .cursor-follower {
-            position: fixed;
-            width: 40px;
-            height: 40px;
-            border: 2px solid var(--primary-orange);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9998;
-            transition: all 0.3s ease;
-            opacity: 0.5;
-        }
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-        .hover-cursor {
-            transform: scale(2) !important;
-        }
+<style>
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
 
-        /* Loading Screen */
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary-orange), var(--dark-blue));
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-            transition: opacity 0.5s ease;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        .loading-spinner {
-            width: 60px;
-            height: 60px;
-            border: 4px solid rgba(255,255,255,0.3);
-            border-top: 4px solid var(--white);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+    }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+    :root {
+        --primary-orange: #FF6B35;
+        --secondary-orange: #FF8C42;
+        --dark-blue: #1A237E;
+        --black: #080808;
+        --dark-bg: #0A0A0A;
+        --white: #FFFFFF;
+        --text-light: #EEEEEE;
+        --glass-bg: rgba(255, 255, 255, 0.07);
+        --glass-border: rgba(255, 255, 255, 0.15);
+        --shadow-glow: 0 20px 40px rgba(255, 107, 53, 0.3);
+    }
 
-        /* Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1rem 5%;
-            background: rgba(10,10,10,0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
+    [data-theme="light"] {
+        --black: #F5F5F5;
+        --dark-bg: #F5F5F5;
+        --white: #111111;
+        --text-light: #333333;
+        --glass-bg: rgba(0, 0, 0, 0.05);
+        --glass-border: rgba(0, 0, 0, 0.12);
+    }
 
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    body {
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+        background: var(--dark-bg);
+        color: var(--white);
+        cursor: none;
+        transition: background 0.4s ease, color 0.4s ease;
+    }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+    a {
+        color: inherit;
+    }
 
+    button,
+    a {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* =========================================================
+       CUSTOM CURSOR
+    ========================================================= */
+
+    .cursor {
+        position: fixed;
+        width: 18px;
+        height: 18px;
+        background: var(--primary-orange);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        transform: translate(-50%, -50%);
+        transition: transform 0.15s ease;
+        mix-blend-mode: difference;
+    }
+
+    .cursor-follower {
+        position: fixed;
+        width: 38px;
+        height: 38px;
+        border: 2px solid var(--primary-orange);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99998;
+        transform: translate(-50%, -50%);
+        transition: all 0.25s ease;
+        opacity: 0.55;
+    }
+
+    .hover-cursor {
+        transform: translate(-50%, -50%) scale(2);
+    }
+
+    /* =========================================================
+       LOADING SCREEN
+    ========================================================= */
+
+    .loading-screen {
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(135deg, var(--primary-orange), var(--dark-blue));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100000;
+        transition: opacity 0.5s ease;
+    }
+
+    .loading-content {
+        text-align: center;
+    }
+
+    .loading-logo {
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 900;
+        margin-bottom: 25px;
+    }
+
+    .loading-spinner {
+        width: 60px;
+        height: 60px;
+        border: 4px solid rgba(255,255,255,0.3);
+        border-top: 4px solid #fff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: auto;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* =========================================================
+       NAVBAR
+    ========================================================= */
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem 5%;
+        background: rgba(10,10,10,0.94);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        z-index: 1000;
+        transition: all 0.3s ease;
+        border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    [data-theme="light"] .navbar {
+        background: rgba(255,255,255,0.94);
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .nav-container {
+        max-width: 1400px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.7rem;
+        font-weight: 900;
+        background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        white-space: nowrap;
+    }
+
+    .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 1.7rem;
+        align-items: center;
+    }
+
+    .nav-link {
+        color: var(--white);
+        text-decoration: none;
+        font-weight: 500;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        color: var(--primary-orange);
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--primary-orange), var(--secondary-orange));
+        transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+        width: 100%;
+    }
+
+    .theme-toggle {
+        background: transparent;
+        border: 2px solid var(--glass-border);
+        color: var(--white);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-left: 1rem;
+    }
+
+    .theme-toggle:hover {
+        background: var(--glass-bg);
+        border-color: var(--primary-orange);
+        color: var(--primary-orange);
+        transform: rotate(20deg);
+    }
+
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        margin-left: 15px;
+    }
+
+    .hamburger span {
+        width: 27px;
+        height: 3px;
+        background: var(--primary-orange);
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+        min-height: 100vh;
+        background:
+            linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.72)),
+            radial-gradient(circle at 20% 30%, rgba(255,107,53,0.25), transparent 35%),
+            radial-gradient(circle at 80% 70%, rgba(26,35,126,0.3), transparent 35%),
+            #02020A;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        inset: -100%;
+        background: linear-gradient(
+            45deg,
+            transparent 40%,
+            rgba(255,107,53,0.12) 50%,
+            transparent 60%
+        );
+        animation: shimmer 7s infinite;
+    }
+
+    @keyframes shimmer {
+        0% {
+            transform: translateX(-30%) rotate(10deg);
+        }
+        100% {
+            transform: translateX(30%) rotate(10deg);
+        }
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 1100px;
+        padding: 120px 20px 60px;
+    }
+
+    .hero-badge {
+        display: inline-block;
+        padding: 8px 18px;
+        border: 1px solid rgba(255,107,53,0.5);
+        background: rgba(255,107,53,0.1);
+        color: var(--primary-orange);
+        border-radius: 50px;
+        font-weight: 600;
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(3rem, 8vw, 6.2rem);
+        line-height: 1.05;
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, #fff, var(--primary-orange));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .hero-content .subtitle {
+        font-size: clamp(1.1rem, 3vw, 1.8rem);
+        margin-bottom: 3rem;
+        color: #eee;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 1.3rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* =========================================================
+       BUTTONS
+    ========================================================= */
+
+    .btn {
+        padding: 1rem 2.3rem;
+        border-radius: 50px;
+        font-size: 1.05rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+        color: #fff;
+        border: 2px solid transparent;
+        box-shadow: var(--shadow-glow);
+    }
+
+    .btn-secondary {
+        background: transparent;
+        border: 2px solid var(--primary-orange);
+        color: var(--primary-orange);
+    }
+
+    .btn:hover {
+        transform: translateY(-5px) scale(1.03);
+        box-shadow: 0 25px 50px rgba(255,107,53,0.4);
+    }
+
+    .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -120%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.35),
+            transparent
+        );
+        transition: left 0.6s;
+    }
+
+    .btn:hover::before {
+        left: 120%;
+    }
+
+    /* =========================================================
+       SECTIONS
+    ========================================================= */
+
+    .section {
+        padding: 110px 5%;
+        max-width: 1500px;
+        margin: auto;
+    }
+
+    .section-title {
+        font-size: clamp(2.3rem, 5vw, 4rem);
+        text-align: center;
+        margin-bottom: 4rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, var(--primary-orange), var(--white));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-orange), var(--secondary-orange));
+        border-radius: 5px;
+    }
+
+    /* =========================================================
+       STATS
+    ========================================================= */
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .stat-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        padding: 2.5rem 1.5rem;
+        border-radius: 20px;
+        text-align: center;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .stat-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-orange), var(--secondary-orange));
+    }
+
+    .stat-card:hover {
+        transform: translateY(-12px);
+        box-shadow: var(--shadow-glow);
+        border-color: var(--primary-orange);
+    }
+
+    .stat-number {
+        display: block;
+        font-size: 3rem;
+        font-weight: 900;
+        color: var(--primary-orange);
+    }
+
+    .stat-card h3 {
+        font-size: 1rem;
+        color: var(--text-light);
+    }
+
+    /* =========================================================
+       PROGRAMS
+    ========================================================= */
+
+    .programs-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .program-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 25px;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.4s ease;
+    }
+
+    .program-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-orange), var(--secondary-orange));
+        z-index: 5;
+    }
+
+    .program-card:hover {
+        transform: translateY(-12px);
+        box-shadow: var(--shadow-glow);
+        border-color: var(--primary-orange);
+    }
+
+    .program-image {
+        height: 240px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .program-image::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.2),
+            transparent
+        );
+        transform: translateX(-100%);
+        transition: 0.7s;
+    }
+
+    .program-card:hover .program-image::after {
+        transform: translateX(100%);
+    }
+
+    .program-content {
+        padding: 2rem;
+    }
+
+    .sport-icon {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+        color: var(--primary-orange);
+    }
+
+    .sport-name {
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        color: var(--primary-orange);
+    }
+
+    .coach-name {
+        color: var(--primary-orange);
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .fee {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--primary-orange);
+        margin: 1rem 0;
+    }
+
+    .fee p {
+        margin-top: 6px;
+    }
+
+    .timing {
+        background: rgba(255,107,53,0.1);
+        border-left: 3px solid var(--primary-orange);
+        padding: 1rem;
+        border-radius: 10px;
+        margin: 1rem 0;
+    }
+
+    /* =========================================================
+       COACHES
+    ========================================================= */
+
+    .coaches-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .coach-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 25px;
+        padding: 2.5rem 2rem;
+        text-align: center;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .coach-card:hover {
+        transform: translateY(-12px);
+        box-shadow: var(--shadow-glow);
+        border-color: var(--primary-orange);
+    }
+
+    .coach-photo {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 4px solid var(--primary-orange);
+        margin: 0 auto 1.5rem;
+        object-fit: cover;
+        display: block;
+        box-shadow: 0 0 30px rgba(255,107,53,0.5);
+        transition: all 0.4s ease;
+    }
+
+    .coach-card:hover .coach-photo {
+        transform: scale(1.08);
+        box-shadow: 0 0 50px rgba(255,107,53,0.8);
+    }
+
+    .coach-card h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    .coach-specialty {
+        color: var(--primary-orange);
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .coach-card h4 {
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 0.8rem;
+        margin-top: 1.5rem;
+    }
+
+    .social-icon {
+        width: 45px;
+        height: 45px;
+        background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 1.15rem;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .social-icon:hover {
+        transform: translateY(-5px) scale(1.1);
+        box-shadow: var(--shadow-glow);
+    }
+
+    /* =========================================================
+       GALLERY
+    ========================================================= */
+
+    .gallery-intro {
+        max-width: 750px;
+        margin: -2rem auto 3rem;
+        text-align: center;
+        color: var(--text-light);
+        opacity: 0.8;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.2rem;
+    }
+
+    .gallery-item {
+        height: 280px;
+        border-radius: 18px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        background: #151515;
+        border: 1px solid var(--glass-border);
+        transition: all 0.4s ease;
+    }
+
+    .gallery-item:hover {
+        transform: translateY(-8px);
+        border-color: var(--primary-orange);
+        box-shadow: 0 15px 35px rgba(255,107,53,0.25);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.08);
+    }
+
+    .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to top,
+            rgba(0,0,0,0.8),
+            transparent 60%
+        );
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 18px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+    }
+
+    .gallery-overlay span {
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .gallery-overlay i {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--primary-orange);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+    }
+
+    /* =========================================================
+       LIGHTBOX
+    ========================================================= */
+
+    .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.96);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        z-index: 999999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        padding: 70px 30px 30px;
+    }
+
+    .lightbox.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .lightbox-image-wrapper {
+        width: min(1100px, 90vw);
+        height: min(78vh, 750px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .lightbox-image {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border-radius: 10px;
+        box-shadow: 0 20px 70px rgba(0,0,0,0.7);
+        transform: scale(0.9);
+        transition: transform 0.3s ease;
+    }
+
+    .lightbox.active .lightbox-image {
+        transform: scale(1);
+    }
+
+    .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid rgba(255,255,255,0.25);
+        background: rgba(255,255,255,0.08);
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .lightbox-close:hover {
+        background: var(--primary-orange);
+        transform: rotate(90deg);
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        border: 1px solid rgba(255,255,255,0.25);
+        background: rgba(255,255,255,0.08);
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .lightbox-prev {
+        left: 25px;
+    }
+
+    .lightbox-next {
+        right: 25px;
+    }
+
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+        background: var(--primary-orange);
+        border-color: var(--primary-orange);
+    }
+
+    .lightbox-counter {
+        position: absolute;
+        top: 27px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        font-weight: 600;
+        background: rgba(255,255,255,0.08);
+        padding: 8px 16px;
+        border-radius: 50px;
+    }
+
+    .lightbox-caption {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    /* =========================================================
+       TESTIMONIALS
+    ========================================================= */
+
+    .testimonial-slider {
+        max-width: 850px;
+        margin: 4rem auto 0;
+    }
+
+    .testimonialSwiper {
+        padding-bottom: 50px;
+    }
+
+    .swiper-slide {
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 25px;
+        padding: 3rem 2.5rem;
+        text-align: center;
+    }
+
+    .stars {
+        color: #FFD700;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .testimonial-text {
+        font-style: italic;
+        font-size: 1.15rem;
+        margin-bottom: 1.5rem;
+        opacity: 0.9;
+    }
+
+    .testimonial-author {
+        font-weight: 700;
+        color: var(--primary-orange);
+    }
+
+    .swiper-pagination-bullet-active {
+        background: var(--primary-orange) !important;
+    }
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+
+    .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-top: 4rem;
+    }
+
+    .contact-info h3 {
+        color: var(--primary-orange);
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+        gap: 1rem;
+    }
+
+    .contact-item i {
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: #fff;
+    }
+
+    .contact-item h4 {
+        margin-bottom: 4px;
+    }
+
+    .contact-item p {
+        color: var(--text-light);
+    }
+
+    #map {
+        height: 320px;
+        border-radius: 20px;
+        margin-top: 2rem;
+        overflow: hidden;
+        border: 1px solid var(--glass-border);
+    }
+
+    .map-placeholder {
+        width: 100%;
+        height: 100%;
+        background:
+            linear-gradient(rgba(10,10,10,0.65), rgba(10,10,10,0.65)),
+            radial-gradient(circle, var(--primary-orange), transparent 60%),
+            #151515;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .map-placeholder i {
+        color: var(--primary-orange);
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .contact-form {
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 25px;
+        padding: 3rem;
+    }
+
+    .form-group {
+        position: relative;
+        margin-bottom: 2rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 1rem 0;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid var(--glass-border);
+        color: var(--white);
+        font-size: 1rem;
+        font-family: inherit;
+        transition: all 0.3s ease;
+    }
+
+    .form-group textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-bottom-color: var(--primary-orange);
+    }
+
+    .form-group label {
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        color: #888;
+        transition: all 0.3s ease;
+        pointer-events: none;
+    }
+
+    .form-group:focus-within label,
+    .form-group input:not(:placeholder-shown) + label,
+    .form-group textarea:not(:placeholder-shown) + label {
+        top: -20px;
+        font-size: 0.85rem;
+        color: var(--primary-orange);
+    }
+
+    .success-message {
+        display: none;
+        margin-top: 15px;
+        padding: 12px;
+        border-radius: 10px;
+        background: rgba(37,211,102,0.15);
+        color: #25D366;
+        text-align: center;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .footer {
+        background: var(--dark-blue);
+        padding: 4rem 5% 2rem;
+        margin-top: 5rem;
+    }
+
+    .footer-content {
+        max-width: 1400px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .footer-section h3 {
+        color: var(--primary-orange);
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+    }
+
+    .footer-link {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.8rem;
+        transition: color 0.3s ease;
+    }
+
+    .footer-link:hover {
+        color: var(--primary-orange);
+    }
+
+    .footer-section p {
+        color: rgba(255,255,255,0.8);
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255,255,255,0.15);
+        color: rgba(255,255,255,0.7);
+    }
+
+    /* =========================================================
+       FLOATING BUTTONS
+    ========================================================= */
+
+    .whatsapp-float {
+        position: fixed;
+        width: 62px;
+        height: 62px;
+        bottom: 30px;
+        right: 30px;
+        background: #25D366;
+        color: #fff;
+        border-radius: 50%;
+        font-size: 30px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        z-index: 900;
+        animation: bounce 2s infinite;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+        background: #128C7E;
+        transform: scale(1.1);
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-10px);
+        }
+        60% {
+            transform: translateY(-5px);
+        }
+    }
+
+    .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 900;
+        color: #fff;
+    }
+
+    .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .back-to-top:hover {
+        transform: translateY(-5px);
+    }
+
+    /* =========================================================
+       SCROLLBAR
+    ========================================================= */
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #080808;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(var(--primary-orange), var(--secondary-orange));
+        border-radius: 5px;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 1100px) {
         .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-link {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary-orange), var(--secondary-orange));
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .theme-toggle {
-            background: none;
-            border: 2px solid var(--glass-border);
-            color: var(--white);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .theme-toggle:hover {
-            background: var(--glass-bg);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 4px;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--primary-orange);
-            transition: 0.3s;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%2301020A" width="1200" height="800"/><path fill="%23FF6B35" opacity="0.1" d="M0 400Q300 200 600 400T1200 400V800H0z"/><path fill="%231A237E" opacity="0.1" d="M0 0Q400 200 800 0T1200 200V0z"/></svg>');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,107,53,0.1) 50%, transparent 70%);
-            animation: shimmer 6s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) skewX(-15deg); }
-            100% { transform: translateX(100%) skewX(-15deg); }
-        }
-
-        .hero-content h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 900;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--white), var(--primary-orange));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            opacity: 0;
-            animation: fadeInUp 1s ease forwards;
-        }
-
-        .hero-content .subtitle {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            margin-bottom: 3rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.3s forwards;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.6s forwards;
-        }
-
-        .btn {
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
-            box-shadow: var(--shadow-glow);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid var(--primary-orange);
-            color: var(--primary-orange);
-        }
-
-        .btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 25px 50px rgba(255,107,53,0.4);
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        /* Section Styles */
-        .section {
-            padding: 100px 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            text-align: center;
-            margin-bottom: 4rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary-orange), var(--white));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-orange), var(--secondary-orange));
-            border-radius: 2px;
-        }
-
-        /* About Section */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .stat-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            padding: 2.5rem 2rem;
-            border-radius: 20px;
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-orange), var(--secondary-orange));
-        }
-
-        .stat-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: var(--shadow-glow);
-            border-color: var(--primary-orange);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-        }
-
-        /* Programs Section */
-        .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .program-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 25px;
-            overflow: hidden;
-            position: relative;
-            transition: all 0.4s ease;
-            height: auto;
-            min-hight: 650px;
-            overflow: visible;
-        }
-
-        .program-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-orange), var(--secondary-orange));
-            z-index: 2;
-            padding-bottom: 30px;
-        }
-
-        .program-image {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .program-image::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.6s;
-        }
-
-        .program-card:hover .program-image::after {
-            left: 100%;
-        }
-
-        .program-content {
-            hight: auto;
-            overflow: visible;
-            padding: 2rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .sport-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .sport-name {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .coach-name {
-            color: var(--primary-orange);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .fee {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary-orange);
-            margin: 1rem 0;
-        }
-
-        .timing {
-            background: rgba(255,107,53,0.1);
-            padding: 1rem;
-            border-radius: 12px;
-            margin: 1rem 0;
-        }
-
-        .program-card:hover {
-            transform: translateY(-20px) rotateX(5deg);
-            box-shadow: var(--shadow-glow);
-            border-color: var(--primary-orange);
-        }
-
-        /* Coaches Section */
-        .coaches-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .coach-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 25px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .coach-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid var(--primary-orange);
-            margin: 0 auto 1.5rem;
-            object-fit: cover;
-            transition: all 0.4s ease;
-            box-shadow: 0 0 30px rgba(255,107,53,0.5);
-        }
-
-        .coach-card:hover .coach-photo {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 0 50px rgba(255,107,53,0.8);
-        }
-
-        .coach-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .coach-specialty {
-            color: var(--primary-orange);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
             gap: 1rem;
-            margin-top: 1.5rem;
         }
 
-        .social-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-icon:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: var(--shadow-glow);
-        }
-
-        /* Gallery Section */
         .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 4rem;
-        }
-
-        .gallery-item {
-            height: 300px;
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
-
-        .gallery-item::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255,107,53,0.8);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-        }
-
-        .gallery-item:hover::after {
-            opacity: 1;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        /* Testimonials */
-        .testimonial-slider {
-            max-width: 800px;
-            margin: 4rem auto 0;
-        }
-
-        .swiper-slide {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 25px;
-            padding: 3rem 2.5rem;
-            text-align: center;
-        }
-
-        .stars {
-            color: #FFD700;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--primary-orange);
-        }
-
-        /* Contact Section */
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 4rem;
-        }
-
-        .contact-info h3 {
-            color: var(--primary-orange);
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            gap: 1rem;
-        }
-
-        .contact-item i {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-
-        .contact-form {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 25px;
-            padding: 3rem;
-        }
-
-        .form-group {
-            position: relative;
-            margin-bottom: 2rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem 1rem 1rem 0;
-            background: transparent;
-            border: none;
-            border-bottom: 2px solid var(--glass-border);
-            color: var(--white);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-bottom-color: var(--primary-orange);
-        }
-
-        .form-group label {
-            position: absolute;
-            top: 1rem;
-            left: 0;
-            color: var(--glass-border);
-            transition: all 0.3s ease;
-            pointer-events: none;
-        }
-
-        .form-group:focus-within label,
-        .form-group input:not(:placeholder-shown) + label,
-        .form-group textarea:not(:placeholder-shown) + label {
-            top: -20px;
-            font-size: 0.9rem;
-            color: var(--primary-orange);
-        }
-
-        /* Map */
-        #map {
-            height: 300px;
-            border-radius: 20px;
-            margin-top: 2rem;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--dark-blue);
-            padding: 4rem 5% 2rem;
-            margin-top: 5rem;
+            grid-template-columns: repeat(3, 1fr);
         }
 
         .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 900px) {
+        body {
+            cursor: auto;
         }
 
-        .footer-section h3 {
-            color: var(--primary-orange);
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
+        .cursor,
+        .cursor-follower {
+            display: none;
         }
 
-        .footer-link {
-            color: var(--white);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.8rem;
-            transition: color 0.3s ease;
+        .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
         }
 
-        .footer-link:hover {
-            color: var(--primary-orange);
+        .programs-grid,
+        .coaches-grid {
+            grid-template-columns: 1fr;
         }
 
-        .footer-bottom {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--glass-border);
-            color: rgba(255,255,255,0.7);
+        .contact-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
         }
 
-        /* Floating Elements */
-        .whatsapp-float {
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .nav-menu {
             position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background: #25D366;
-            color: #fff;
-            border-radius: 50px;
+            left: -100%;
+            top: 72px;
+            width: 100%;
+            flex-direction: column;
+            gap: 0;
+            background: rgba(8,8,8,0.98);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0 2rem;
+            transition: 0.3s;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        [data-theme="light"] .nav-menu {
+            background: rgba(245,245,245,0.98);
+        }
+
+        .nav-menu.active {
+            left: 0;
+        }
+
+        .nav-menu li {
+            width: 100%;
             text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 100;
-            animation: bounce 2s infinite;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 12px;
+        }
+
+        .hamburger {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background: #128C7E;
+        .theme-toggle {
+            margin-left: auto;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .section {
+            padding: 80px 5%;
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+        .logo {
+            font-size: 1.25rem;
+        }
+
+        .stats-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .stat-card {
+            padding: 2rem 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.3rem;
+        }
+
+        .gallery-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .gallery-item {
+            height: 190px;
+            border-radius: 12px;
+        }
+
+        .gallery-overlay {
+            opacity: 1;
+            padding: 10px;
+        }
+
+        .gallery-overlay span {
+            font-size: 0.8rem;
+        }
+
+        .gallery-overlay i {
+            width: 32px;
+            height: 32px;
+            font-size: 0.8rem;
+        }
+
+        .lightbox {
+            padding: 80px 10px 50px;
+        }
+
+        .lightbox-image-wrapper {
+            width: 95vw;
+            height: 70vh;
+        }
+
+        .lightbox-prev,
+        .lightbox-next {
+            width: 42px;
+            height: 42px;
+            font-size: 1rem;
+        }
+
+        .lightbox-prev {
+            left: 8px;
+        }
+
+        .lightbox-next {
+            right: 8px;
+        }
+
+        .lightbox-close {
+            right: 12px;
+            top: 15px;
+        }
+
+        .lightbox-counter {
+            top: 25px;
+            left: 50%;
+            font-size: 0.85rem;
+        }
+
+        .contact-form {
+            padding: 2rem 1.5rem;
+        }
+
+        .footer-content {
+            grid-template-columns: 1fr;
+        }
+
+        .whatsapp-float {
+            width: 55px;
+            height: 55px;
+            right: 18px;
+            bottom: 18px;
+            font-size: 26px;
         }
 
         .back-to-top {
-            position: fixed;
-            bottom: 40px;
-            left: 40px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 100;
+            width: 45px;
+            height: 45px;
+            left: 18px;
+            bottom: 18px;
         }
 
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
+        .hero-content {
+            padding-top: 130px;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
+        .cta-buttons .btn {
+            width: 100%;
+            max-width: 320px;
+        }
+    }
 
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background-color: var(--black);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
-                padding: 2rem 0;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .programs-grid,
-            .coaches-grid {
-                grid-template-columns: 1fr;
-            }
+    @media (max-width: 380px) {
+        .gallery-grid {
+            grid-template-columns: 1fr;
         }
 
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
+        .gallery-item {
+            height: 240px;
         }
+    }
+</style>
+<!-- =========================================================
+     LOADING SCREEN
+========================================================= -->
 
-        ::-webkit-scrollbar-track {
-            background: var(--black);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(var(--primary-orange), var(--secondary-orange));
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<body data-theme="dark">
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
+<div class="loading-screen" id="loadingScreen">
+    <div class="loading-content">
+        <div class="loading-logo">NARAYANI SPORTS</div>
         <div class="loading-spinner"></div>
     </div>
+</div>
 
-    <!-- Custom Cursor -->
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-follower" id="cursorFollower"></div>
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
 
-    <!-- Navbar -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo">Narayani Sports</div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#programs" class="nav-link">Programs</a></li>
-                <li><a href="#coaches" class="nav-link">Coaches</a></li>
-                <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <button class="theme-toggle" id="themeToggle">
-                <i class="fas fa-moon"></i>
-            </button>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+
+        <div class="logo">
+            Narayani Sports
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 data-aos="fade-up">Narayani Sports & Fitness Academy</h1>
-            <p class="subtitle" data-aos="fade-up" data-aos-delay="200">Train Hard • Stay Fit • Become Unstoppable</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Join Now</a>
-                <a href="#programs" class="btn btn-secondary">Explore Programs</a>
-            </div>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#programs" class="nav-link">Programs</a></li>
+            <li><a href="#coaches" class="nav-link">Coaches</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <div class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <h2 class="section-title" data-aos="fade-up">About Our Academy</h2>
-        <div class="stats-grid">
-            <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
-                <span class="stat-number" data-target="100">0</span>
-                <h3>+ Students</h3>
-            </div>
-            <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
-                <span class="stat-number" data-target="3">0</span>
-                <h3>Coaches</h3>
-            </div>
-            <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
-                <span class="stat-number" data-target="15">0</span>
-                <h3>+ Tournament Wins</h3>
-            </div>
-            <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
-                <span class="stat-number" data-target="5">0</span>
-                <h3>+ Years Experience</h3>
-            </div>
+    </div>
+</nav>
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            <i class="fas fa-bolt"></i>
+            HALDWANI'S SPORTS COMMUNITY
         </div>
-    </section>
 
-    <!-- Programs Section -->
-    <section id="programs" class="section">
-        <h2 class="section-title" data-aos="fade-up">Our Programs</h2>
-        <div class="programs-grid">
-            <div class="program-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="program-image" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(245, 6, 6, 0.5)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 600%22><rect fill=%22%2301020A%22 width=%221200%22 height=%22600%22/><circle fill=%22%23FF6B35%22 cx=%22600%22 cy=%22300%22 r=%22150%22 opacity=%220.3%22/><path fill=%22%23FFFFFF%22 d=%22M400 200Q500 150 600 200Q700 250 800 200V400Q700 450 600 400Q500 450 400 400Z%22 opacity=%220.2%22/></svg>');">
-                </div>
-                <div class="program-content">
-                    <i class="fas fa-volleyball-ball sport-icon"></i>
-                    <h3 class="sport-name">Volleyball</h3>
-                    <div class="coach-name">Coach: Mr Rohit Karki Sir</div>
-                    <div class="fee">Regular: ₹1000 + ₹550 Jersey <p> Professional: ₹1500 + ₹550 Jersey </p> </div>
-                    <div class="timing">
-                        <strong>Regular:</strong> 5:30 PM – 7:00 PM<br>
-                        <strong>Professional:</strong> 5:15 PM – 7:45 PM
-                    </div>
-                    <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Enroll Now</a>
-                </div>
-            </div>
+        <h1>
+            Narayani Sports & Fitness Academy
+        </h1>
 
-            <div class="program-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="program-image" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(14, 171, 244, 0.5)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 600%22><rect fill=%22%2301020A%22 width=%221200%22 height=%22600%22/><circle fill=%22%23FFFFFF%22 cx=%22600%22 cy=%22300%22 r=%2220%22/><path fill=%22%23FF6B35%22 d=%22M200 400Q400 350 600 400Q800 450 1000 400L1200 500L0 500Z%22 opacity=%220.3%22/></svg>');">
-                </div>
-                <div class="program-content">
-                    <i class="fas fa-futbol sport-icon"></i>
-                    <h3 class="sport-name">Football</h3>
-                    <div class="coach-name">Coach: Mr Vikki Tolia Sir</div>
-                    <div class="fee">₹1000</div>
-                    <div class="timing">
-                        <strong>Timing:</strong> 4:00 PM – 8:00 PM
-                    </div>
-                    <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Enroll Now</a>
-                </div>
-            </div>
+        <p class="subtitle">
+            Train Hard • Stay Fit • Become Unstoppable
+        </p>
 
-            <div class="program-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="program-image" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(136, 252, 12, 0.5)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 600%22><rect fill=%22%231A237E%22 width=%221200%22 height=%22600%22/><path fill=%22%23FF6B35%22 d=%22M100 100Q300 50 500 100Q700 150 900 100V300Q700 350 500 300Q300 350 100 300Z%22 opacity=%220.4%22/><circle fill=%22%23FFFFFF%22 cx=%22600%22 cy=%22200%22 r=%2230%22/></svg>');">
-                </div>
-                <div class="program-content">
-                    <i class="fas fa-dumbbell sport-icon"></i>
-                    <h3 class="sport-name">Calisthenics</h3>
-                    <div class="coach-name">Coach: Mr Pankaj bisht Sir</div>
-                    <div class="fee">₹1000</div>
-                    <div class="timing">
-                        <strong>Timing:</strong> 4:00 PM – 8:00 PM
-                    </div>
-                    <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Enroll Now</a>
-                </div>
-            </div>
+        <div class="cta-buttons">
+
+            <a href="#contact" class="btn btn-primary">
+                <i class="fas fa-user-plus"></i>
+                Join Now
+            </a>
+
+            <a href="#programs" class="btn btn-secondary">
+                <i class="fas fa-dumbbell"></i>
+                Explore Programs
+            </a>
+
         </div>
-    </section>
 
-    <!-- Coaches Section -->
-    <section id="coaches" class="section">
-        <h2 class="section-title" data-aos="fade-up">Our Elite Coaches</h2>
-        <div class="coaches-grid">
-            <div class="coach-card" data-aos="fade-up" data-aos-delay="100">
-                <img src="rohit.jpeg" alt="Rohit Karki" class="coach-photo">
-                <h3>Mr Rohit Karki</h3>
-                <div class="coach-specialty">Volleyball Expert</div>
-                <h4>10+ years of coaching experience.</h4>
-                <p>contact no:9997872927.</p>
-                <div class="social-icons">
-                    <a href="https://instagram.com/_rohit_karki._" 
-                    class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="https://facebook.com" class="social-icon"><i class="fab fa-facebook"></i></a>
-                    <a href="https://wa.me/919997872927" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-
-            <div class="coach-card" data-aos="fade-up" data-aos-delay="200">
-                <img src="vikki.jpeg" alt="Vikki Tolia" class="coach-photo">
-                <h3>Mr Vikki Tolia</h3>
-                <div class="coach-specialty">Football Coach</div>
-                <h4>Certified football coach with national level playing experience.</h4>
-                <p>contact no:9027042515.</p>
-                <div class="social-icons">
-                    <a href="https://instagram.com/toliavikkisingh" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="https://facebook.com" class="social-icon"><i class="fab fa-facebook"></i></a>
-                    <a href="https://wa.me/919027042515" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-
-            <div class="coach-card" data-aos="fade-up" data-aos-delay="300">
-                <img src="Pankaj.jpeg" alt="Pankaj bisht" class="coach-photo">
-                <h3>Mr Pankaj bisht</h3>
-                <div class="coach-specialty">Calisthenics Master</div>
-                <h4>Street workout specialist. Bodyweight training expert.</h4>
-                <p>contact no:9557695793.</p>
-                <div class="social-icons">
-                    <a href="https://instagram.com/thenix_world" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="https://facebook.com" class="social-icon"><i class="fab fa-facebook"></i></a>
-                    <a href="https://wa.me/919557695793" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="section">
-        <h2 class="section-title" data-aos="fade-up">Gallery</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                <img src="volleyball1.jpeg" alt="Volleyball">
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                <img src="football1.jpeg" alt="Football">
-            </div>
-            
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
-                <img src="calasthenics.jpeg" alt="Team">
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="600">
-                <img src="volleyball2.jpeg" alt="Victory">
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
-                <img src="football2.jpeg" alt="Training">
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
-                <img src="calasthenics1.jpeg"alt="Fitness">
-            </div>
-             <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                <img src="volleyball3.jpeg" alt="volleyball">
-            </div>
-             <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                <img src="football3.jpeg" alt="Football">
-            </div>
-             <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                <img src="calasthenics2.jpeg" alt="Football">
-            </div>
-             <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                <img src="volleyball4.jpeg" alt="Football">
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                <img src="football4.jpeg" alt="Football">
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                <img src="calasthenics3.jpeg" alt="Football">
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="section">
-        <h2 class="section-title" data-aos="fade-up">feed-backs</h2>
-        <div class="testimonial-slider" data-aos="fade-up" data-aos-delay="200">
-            <div class="swiper testimonialSwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text">"Best academy in Haldwani! Coaches are amazing."</p>
-                        <div class="testimonial-author"> Himani Matiyali</div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text">"Professional training with amazing results."</p>
-                        <div class="testimonial-author"> Kunal Joshi</div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text">"Best volleyball coaching i ever had"</p>
-                        <div class="testimonial-author"> Dheeraj Pandey</div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text">"Amazing coaching for girls tooo"</p>
-                        <div class="testimonial-author"> Pratibha Joshi</div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
-        <div class="contact-content">
-            <div class="contact-info" data-aos="fade-up">
-                <h3>Contact Information</h3>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <h4>Location</h4>
-                        <p>Narayani Sports Academy, Near Block Office,Haldwani,Uttarakhand</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <div>
-                        <h4>Phone</h4>
-                        <p>+91 95576 95793</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h4>Email</h4>
-                        <p>narayaniacademy123@gmail.com</p>
-                    </div>
-                </div>
-                <div id="map"></div>
-            </div>
-            
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Narayani Sports</h3>
-                <p>Train Hard • Stay Fit • Become Unstoppable</p>
-                <div style="margin-top: 1rem;">
-                    <a href="https://youtube.com/@Nsachamps" class="social-icon" style="background: var(--glass-bg); border: 1px solid var(--glass-border);"><i class="fab fa-youtube"></i></a> 
-                    <a href="https://instagram.com/nsachamps" class="social-icon" style="background: var(--glass-bg); border: 1px solid var(--glass-border);"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/919557695793" class="social-icon" style="background: var(--glass-bg); border: 1px solid var(--glass-border);"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="#home" class="footer-link">Home</a>
-                <a href="#about" class="footer-link">About</a>
-                <a href="#programs" class="footer-link">Programs</a>
-                <a href="#coaches" class="footer-link">Coaches</a>
-            </div>
-            <div class="footer-section">
-                <h3>Programs</h3>
-                <a href="#" class="footer-link">Volleyball</a>
-                <a href="#" class="footer-link">Football</a>
-                <a href="#" class="footer-link">Calisthenics</a>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Info</h3>
-                <p>Haldwani, Uttarakhand</p>
-                <p>+91 95576 95793</p>
-                <p>narayaniacademy123@gmail.com</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Narayani Sports & Fitness Academy. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/919557695793" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Back to Top -->
-    <div class="back-to-top" id="backToTop">
-        <i class="fas fa-chevron-up"></i>
     </div>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        // Loading Screen
-        window.addEventListener('load', () => {
-            const loadingScreen = document.getElementById('loadingScreen');
-            loadingScreen.style.opacity = '0';
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-            }, 500);
-        });
+</section>
 
-        // Custom Cursor
-        const cursor = document.getElementById('cursor');
-        const cursorFollower = document.getElementById('cursorFollower');
-        let mouseX = 0, mouseY = 0;
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about" class="section">
+
+    <h2 class="section-title" data-aos="fade-up">
+        About Our Academy
+    </h2>
+
+    <div class="stats-grid">
+
+        <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+            <span class="stat-number" data-target="100">0</span>
+            <h3>Students</h3>
+        </div>
+
+        <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+            <span class="stat-number" data-target="3">0</span>
+            <h3>Coaches</h3>
+        </div>
+
+        <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+            <span class="stat-number" data-target="15">0</span>
+            <h3>Tournament Wins</h3>
+        </div>
+
+        <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+            <span class="stat-number" data-target="5">0</span>
+            <h3>Years Experience</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     PROGRAMS
+========================================================= -->
+
+<section id="programs" class="section">
+
+    <h2 class="section-title" data-aos="fade-up">
+        Our Programs
+    </h2>
+
+    <div class="programs-grid">
+
+        <!-- Volleyball -->
+
+        <div class="program-card" data-aos="fade-up">
+
+            <div class="program-image"
+                style="background:
+                linear-gradient(rgba(0,0,0,0.45), rgba(245,6,6,0.45)),
+                radial-gradient(circle, #FF6B35, #080808);">
+            </div>
+
+            <div class="program-content">
+
+                <i class="fas fa-volleyball-ball sport-icon"></i>
+
+                <h3 class="sport-name">
+                    Volleyball
+                </h3>
+
+                <div class="coach-name">
+                    Coach: Mr Rohit Karki Sir
+                </div>
+
+                <div class="fee">
+                    Regular: ₹1000 + ₹550 Jersey
+                    <p>
+                        Professional: ₹1500 + ₹550 Jersey
+                    </p>
+                </div>
+
+                <div class="timing">
+                    <strong>Regular:</strong>
+                    5:30 PM – 7:00 PM
+                    <br>
+                    <strong>Professional:</strong>
+                    5:15 PM – 7:45 PM
+                </div>
+
+                <a href="#contact" class="btn btn-primary" style="width:100%;">
+                    Enroll Now
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Football -->
+
+        <div class="program-card" data-aos="fade-up" data-aos-delay="150">
+
+            <div class="program-image"
+                style="background:
+                linear-gradient(rgba(0,0,0,0.45), rgba(14,171,244,0.45)),
+                radial-gradient(circle, #1A237E, #080808);">
+            </div>
+
+            <div class="program-content">
+
+                <i class="fas fa-futbol sport-icon"></i>
+
+                <h3 class="sport-name">
+                    Football
+                </h3>
+
+                <div class="coach-name">
+                    Coach: Mr Vikki Tolia Sir
+                </div>
+
+                <div class="fee">
+                    ₹1000
+                </div>
+
+                <div class="timing">
+                    <strong>Timing:</strong>
+                    4:00 PM – 8:00 PM
+                </div>
+
+                <a href="#contact" class="btn btn-primary" style="width:100%;">
+                    Enroll Now
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Calisthenics -->
+
+        <div class="program-card" data-aos="fade-up" data-aos-delay="300">
+
+            <div class="program-image"
+                style="background:
+                linear-gradient(rgba(0,0,0,0.45), rgba(136,252,12,0.35)),
+                radial-gradient(circle, #1A237E, #080808);">
+            </div>
+
+            <div class="program-content">
+
+                <i class="fas fa-dumbbell sport-icon"></i>
+
+                <h3 class="sport-name">
+                    Calisthenics
+                </h3>
+
+                <div class="coach-name">
+                    Coach: Mr Pankaj Bisht Sir
+                </div>
+
+                <div class="fee">
+                    ₹1000
+                </div>
+
+                <div class="timing">
+                    <strong>Timing:</strong>
+                    4:00 PM – 8:00 PM
+                </div>
+
+                <a href="#contact" class="btn btn-primary" style="width:100%;">
+                    Enroll Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     COACHES
+========================================================= -->
+
+<section id="coaches" class="section">
+
+    <h2 class="section-title" data-aos="fade-up">
+        Our Elite Coaches
+    </h2>
+
+    <div class="coaches-grid">
+
+        <!-- Rohit -->
+
+        <div class="coach-card" data-aos="fade-up">
+
+            <img
+                src="rohit.jpeg"
+                alt="Rohit Karki"
+                class="coach-photo"
+                loading="lazy"
+            >
+
+            <h3>Mr Rohit Karki</h3>
+
+            <div class="coach-specialty">
+                Volleyball Expert
+            </div>
+
+            <h4>
+                10+ years of coaching experience.
+            </h4>
+
+            <p>
+                Contact No: 9997872927
+            </p>
+
+            <div class="social-icons">
+
+                <a
+                    href="https://instagram.com/_rohit_karki._"
+                    class="social-icon"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Rohit Instagram"
+                >
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a
+                    href="https://facebook.com"
+                    class="social-icon"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Facebook"
+                >
+                    <i class="fab fa-facebook"></i>
+                </a>
+
+                <a
+                    href="https://wa.me/919997872927"
+                    class="social-icon"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="WhatsApp Rohit"
+                >
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Vikki -->
+
+        <div class="coach-card" data-aos="fade-up" data-aos-delay="150">
+
+            <img
+                src="vikki.jpeg"
+                alt="Vikki Tolia"
+                class="coach-photo"
+                loading="lazy"
+            >
+
+            <h3>Mr Vikki Tolia</h3>
+
+            <div class="coach-specialty">
+                Football Coach
+            </div>
+
+            <h4>
+                Certified football coach with national level playing experience.
+            </h4>
+
+            <p>
+                Contact No: 9027042515
+            </p>
+
+            <div class="social-icons">
+
+                <a
+                    href="https://instagram.com/toliavikkisingh"
+                    class="social-icon"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Vikki Instagram"
+                >
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a
+                    href="https://facebook.com"
+                    class="social-icon"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Facebook"
+                >
+                    <i class="fab fa-facebook"></i>
+                </a>
+
+                <a
+                    href="https://wa.me/919027042515"
+                    class="social-icon"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="WhatsApp Vikki"
+                >
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Pankaj -->
+
+        <div class="coach-card" data-aos="fade-up" data-aos-delay="300">
+
+            <img
+                src="Pankaj.jpeg"
+                alt="Pankaj Bisht"
+                class="coach-photo"
+                loading="lazy"
+            >
+
+            <h3>Mr Pankaj Bisht</h3>
+
+            <div class="coach-specialty">
+                Calisthenics Master
+            </div>
+
+            <h4>
+                Street workout specialist. Bodyweight training expert.
+            </h4>
+
+            <p>
+                Contact No: 9557695793
+            </p>
+
+            <div class="social-icons">
+
+                <a
+                    href="https://instagram.com/thenix_world"
+                    class="social-icon"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Pankaj Instagram"
+                >
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a
+                    href="https://facebook.com"
+                    class="social-icon"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Facebook"
+                >
+                    <i class="fab fa-facebook"></i>
+                </a>
+
+                <a
+                    href="https://wa.me/919557695793"
+                    class="social-icon"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="WhatsApp Pankaj"
+                >
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     GALLERY
+     
+     TOTAL = 39 IMAGES
+     
+     Existing:
+     1-15 = your current images
+     
+     New:
+     16-42 = additional image slots
+     
+     If you want exactly 39 total images,
+     use gallery13.jpeg through gallery39.jpeg
+     as described below.
+========================================================= -->
+
+<section id="gallery" class="section">
+
+    <h2 class="section-title" data-aos="fade-up">
+        Gallery
+    </h2>
+
+    <p class="gallery-intro">
+        Explore moments from training sessions, tournaments,
+        fitness workouts and our academy community.
+        Click any image to view it full screen.
+    </p>
+
+    <div class="gallery-grid" id="galleryGrid">
+
+        <!-- ==============================
+             EXISTING IMAGES
+        =============================== -->
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="volleyball1.jpeg" alt="Volleyball training" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Volleyball</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="football1.jpeg" alt="Football training" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Football</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="calasthenics.jpeg" alt="Calisthenics training" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Calisthenics</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="volleyball2.jpeg" alt="Volleyball victory" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Volleyball</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="football2.jpeg" alt="Football training" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Football</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="calasthenics1.jpeg" alt="Fitness training" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Fitness</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="volleyball3.jpeg" alt="Volleyball match" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Volleyball</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="football3.jpeg" alt="Football match" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Football</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="calasthenics2.jpeg" alt="Calisthenics workout" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Calisthenics</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="volleyball4.jpeg" alt="Volleyball training" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Volleyball</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="football4.jpeg" alt="Football training" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Football</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="calasthenics3.jpeg" alt="Calisthenics workout" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Calisthenics</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+
+        <!-- ==============================
+             27 NEW IMAGE SLOTS
+             
+             Rename your new images to:
+             gallery13.jpeg ... gallery39.jpeg
+             
+             OR simply change src below.
+        =============================== -->
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery13.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery14.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery15.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery16.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery17.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery18.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery19.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery20.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery21.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery22.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery23.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery24.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery25.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery26.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery27.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery28.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery29.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery30.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery31.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery32.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery33.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery34.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery35.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery36.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery37.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery38.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+            <img src="gallery39.jpeg" alt="Narayani Sports Academy" loading="lazy">
+            <div class="gallery-overlay">
+                <span>Academy</span>
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     LIGHTBOX
+========================================================= -->
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+
+    <button
+        class="lightbox-close"
+        id="lightboxClose"
+        aria-label="Close gallery"
+    >
+        <i class="fas fa-times"></i>
+    </button>
+
+    <div class="lightbox-counter" id="lightboxCounter">
+        1 / 39
+    </div>
+
+    <button
+        class="lightbox-prev"
+        id="lightboxPrev"
+        aria-label="Previous image"
+    >
+        <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <div class="lightbox-image-wrapper">
+        <img
+            src=""
+            alt=""
+            class="lightbox-image"
+            id="lightboxImage"
+        >
+    </div>
+
+    <button
+        class="lightbox-next"
+        id="lightboxNext"
+        aria-label="Next image"
+    >
+        <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+
+</div>
+
+<!-- =========================================================
+     TESTIMONIALS
+========================================================= -->
+
+<section id="testimonials" class="section">
+
+    <h2 class="section-title" data-aos="fade-up">
+        Feedbacks
+    </h2>
+
+    <div class="testimonial-slider" data-aos="fade-up">
+
+        <div class="swiper testimonialSwiper">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p class="testimonial-text">
+                        "Best academy in Haldwani! Coaches are amazing."
+                    </p>
+
+                    <div class="testimonial-author">
+                        Himani Matiyali
+                    </div>
+
+                </div>
+
+                <div class="swiper-slide">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p class="testimonial-text">
+                        "Professional training with amazing results."
+                    </p>
+
+                    <div class="testimonial-author">
+                        Kunal Joshi
+                    </div>
+
+                </div>
+
+                <div class="swiper-slide">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p class="testimonial-text">
+                        "Best volleyball coaching I ever had."
+                    </p>
+
+                    <div class="testimonial-author">
+                        Dheeraj Pandey
+                    </div>
+
+                </div>
+
+                <div class="swiper-slide">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p class="testimonial-text">
+                        "Amazing coaching for girls too!"
+                    </p>
+
+                    <div class="testimonial-author">
+                        Pratibha Joshi
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact" class="section">
+
+    <h2 class="section-title" data-aos="fade-up">
+        Get In Touch
+    </h2>
+
+    <div class="contact-content">
+
+        <div class="contact-info" data-aos="fade-up">
+
+            <h3>
+                Contact Information
+            </h3>
+
+            <div class="contact-item">
+
+                <i class="fas fa-map-marker-alt"></i>
+
+                <div>
+                    <h4>Location</h4>
+                    <p>
+                        Narayani Sports Academy,
+                        Near Block Office, Haldwani,
+                        Uttarakhand
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="contact-item">
+
+                <i class="fas fa-phone"></i>
+
+                <div>
+                    <h4>Phone</h4>
+                    <p>
+                        +91 95576 95793
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="contact-item">
+
+                <i class="fas fa-envelope"></i>
+
+                <div>
+                    <h4>Email</h4>
+                    <p>
+                        narayaniacademy123@gmail.com
+                    </p>
+                </div>
+
+            </div>
+
+            <div id="map">
+
+                <div class="map-placeholder">
+
+                    <div>
+                        <i class="fas fa-location-dot"></i>
+
+                        <h3>
+                            Narayani Sports Academy
+                        </h3>
+
+                        <p>
+                            Near Block Office, Haldwani, Uttarakhand
+                        </p>
+
+                        <a
+                            href="https://www.google.com/maps/search/?api=1&query=Narayani+Sports+Academy+Haldwani+Uttarakhand"
+                            target="_blank"
+                            rel="noopener"
+                            class="btn btn-primary"
+                            style="margin-top:15px;"
+                        >
+                            <i class="fas fa-map"></i>
+                            Open in Google Maps
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Contact Form -->
+
+        <div class="contact-form" data-aos="fade-up" data-aos-delay="150">
+
+            <h3 style="margin-bottom:25px; color:var(--primary-orange);">
+                Send Us a Message
+            </h3>
+
+            <form id="contactForm">
+
+                <div class="form-group">
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder=" "
+                        required
+                    >
+
+                    <label for="name">
+                        Your Name
+                    </label>
+
+                </div>
+
+                <div class="form-group">
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder=" "
+                        required
+                    >
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                </div>
+
+                <div class="form-group">
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder=" "
+                    >
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                </div>
+
+                <div class="form-group">
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder=" "
+                        required
+                    ></textarea>
+
+                    <label for="message">
+                        Your Message
+                    </label>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    style="width:100%;"
+                >
+                    <i class="fas fa-paper-plane"></i>
+                    Send Message
+                </button>
+
+                <div
+                    class="success-message"
+                    id="successMessage"
+                >
+                    Thank you! Your message has been received.
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div class="footer-section">
+
+            <h3>
+                Narayani Sports
+            </h3>
+
+            <p>
+                Train Hard • Stay Fit • Become Unstoppable
+            </p>
+
+            <div style="margin-top:1rem; display:flex; gap:10px;">
+
+                <a
+                    href="https://youtube.com/@Nsachamps"
+                    class="social-icon"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="YouTube"
+                >
+                    <i class="fab fa-youtube"></i>
+                </a>
+
+                <a
+                    href="https://instagram.com/nsachamps"
+                    class="social-icon"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Instagram"
+                >
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a
+                    href="https://wa.me/919557695793"
+                    class="social-icon"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="WhatsApp"
+                >
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-section">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="#home" class="footer-link">Home</a>
+            <a href="#about" class="footer-link">About</a>
+            <a href="#programs" class="footer-link">Programs</a>
+            <a href="#coaches" class="footer-link">Coaches</a>
+            <a href="#gallery" class="footer-link">Gallery</a>
+            <a href="#contact" class="footer-link">Contact</a>
+
+        </div>
+
+        <div class="footer-section">
+
+            <h3>
+                Programs
+            </h3>
+
+            <a href="#programs" class="footer-link">
+                Volleyball
+            </a>
+
+            <a href="#programs" class="footer-link">
+                Football
+            </a>
+
+            <a href="#programs" class="footer-link">
+                Calisthenics
+            </a>
+
+        </div>
+
+        <div class="footer-section">
+
+            <h3>
+                Contact Info
+            </h3>
+
+            <p>
+                Haldwani, Uttarakhand
+            </p>
+
+            <p style="margin-top:8px;">
+                +91 95576 95793
+            </p>
+
+            <p style="margin-top:8px;">
+                narayaniacademy123@gmail.com
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+            &copy; <span id="currentYear"></span>
+            Narayani Sports & Fitness Academy.
+            All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- =========================================================
+     FLOATING WHATSAPP
+========================================================= -->
+
+<a
+    href="https://wa.me/919557695793"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat on WhatsApp"
+>
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Back to Top -->
+
+<div
+    class="back-to-top"
+    id="backToTop"
+    aria-label="Back to top"
+>
+    <i class="fas fa-chevron-up"></i>
+</div>
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+
+    /* =====================================================
+       LOADING SCREEN
+    ===================================================== */
+
+    window.addEventListener('load', () => {
+
+        const loadingScreen =
+            document.getElementById('loadingScreen');
+
+        loadingScreen.style.opacity = '0';
+
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+        }, 500);
+
+    });
+
+
+    /* =====================================================
+       CUSTOM CURSOR
+    ===================================================== */
+
+    const cursor =
+        document.getElementById('cursor');
+
+    const cursorFollower =
+        document.getElementById('cursorFollower');
+
+    if (window.innerWidth > 900) {
 
         document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            
-            cursor.style.left = mouseX + 'px';
-            cursor.style.top = mouseY + 'px';
-            
-            setTimeout(() => {
-                cursorFollower.style.left = mouseX + 'px';
-                cursorFollower.style.top = mouseY + 'px';
-            }, 100);
+
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+
+            cursorFollower.style.left = e.clientX + 'px';
+            cursorFollower.style.top = e.clientY + 'px';
+
         });
 
-        // Hover effects for cursor
-        document.querySelectorAll('a, button, .gallery-item').forEach(el => {
-            el.addEventListener('mouseenter', () => {
+        document.querySelectorAll(
+            'a, button, .gallery-item'
+        ).forEach(element => {
+
+            element.addEventListener('mouseenter', () => {
                 cursor.classList.add('hover-cursor');
                 cursorFollower.classList.add('hover-cursor');
             });
-            el.addEventListener('mouseleave', () => {
+
+            element.addEventListener('mouseleave', () => {
                 cursor.classList.remove('hover-cursor');
                 cursorFollower.classList.remove('hover-cursor');
             });
+
         });
 
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(10,10,10,0.98)';
-            } else {
-                navbar.style.background = 'rgba(10,10,10,0.95)';
-            }
+    }
+
+
+    /* =====================================================
+       MOBILE NAVIGATION
+    ===================================================== */
+
+    const hamburger =
+        document.getElementById('hamburger');
+
+    const navMenu =
+        document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', () => {
+
+        navMenu.classList.toggle('active');
+
+        hamburger.classList.toggle('active');
+
+    });
+
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+
+        link.addEventListener('click', () => {
+
+            navMenu.classList.remove('active');
+
+            hamburger.classList.remove('active');
+
         });
 
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+    });
+
+
+    /* =====================================================
+       THEME TOGGLE
+    ===================================================== */
+
+    const themeToggle =
+        document.getElementById('themeToggle');
+
+    const body =
+        document.body;
+
+    themeToggle.addEventListener('click', () => {
+
+        const currentTheme =
+            body.getAttribute('data-theme');
+
+        if (currentTheme === 'dark') {
+
+            body.setAttribute('data-theme', 'light');
+
+            themeToggle.innerHTML =
+                '<i class="fas fa-sun"></i>';
+
+        } else {
+
+            body.setAttribute('data-theme', 'dark');
+
+            themeToggle.innerHTML =
+                '<i class="fas fa-moon"></i>';
+
+        }
+
+    });
+
+
+    /* =====================================================
+       NAVBAR SCROLL
+    ===================================================== */
+
+    window.addEventListener('scroll', () => {
+
+        const navbar =
+            document.getElementById('navbar');
+
+        if (window.scrollY > 80) {
+
+            navbar.style.padding = '0.75rem 5%';
+
+        } else {
+
+            navbar.style.padding = '1rem 5%';
+
+        }
+
+    });
+
+
+    /* =====================================================
+       ANIMATED COUNTERS
+    ===================================================== */
+
+    let countersStarted = false;
+
+    function animateCounters() {
+
+        if (countersStarted) return;
+
+        countersStarted = true;
+
+        const counters =
+            document.querySelectorAll('.stat-number');
+
+        counters.forEach(counter => {
+
+            const target =
+                parseInt(counter.dataset.target);
+
+            let current = 0;
+
+            const duration = 1500;
+
+            const startTime = performance.now();
+
+            function updateCounter(currentTime) {
+
+                const progress =
+                    Math.min(
+                        (currentTime - startTime) / duration,
+                        1
+                    );
+
+                current =
+                    Math.floor(
+                        progress * target
+                    );
+
+                counter.textContent =
+                    current + '+';
+
+                if (progress < 1) {
+
+                    requestAnimationFrame(
+                        updateCounter
+                    );
+
+                } else {
+
+                    counter.textContent =
+                        target + '+';
+
                 }
-            });
-        });
 
-        // Mobile Menu
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('navMenu');
-
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
-
-        // Theme Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-
-        themeToggle.addEventListener('click', () => {
-            if (body.getAttribute('data-theme') === 'dark') {
-                body.setAttribute('data-theme', 'light');
-                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            } else {
-                body.setAttribute('data-theme', 'dark');
-                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
             }
+
+            requestAnimationFrame(
+                updateCounter
+            );
+
         });
 
-        // Animated Counters
-        const animateCounters = () => {
-            const counters = document.querySelectorAll('.stat-number');
-            counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-target'));
-                const increment = target / 100;
-                let current = 0;
-                
-                const updateCounter = () => {
-                    if (current < target) {
-                        current += increment;
-                        counter.textContent = Math.floor(current) + '+';
-                        setTimeout(updateCounter, 20);
-                    } else {
-                        counter.textContent = target + '+';
+    }
+
+
+    const counterObserver =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        animateCounters();
+
+                        counterObserver.disconnect();
+
                     }
-                };
-                updateCounter();
-            });
-        };
 
-        // Intersection Observer for counters
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    counterObserver.unobserve(entry.target);
-                }
-            });
-        });
+                });
 
-        counterObserver.observe(document.querySelector('.stats-grid'));
-
-        // AOS Initialization
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100,
-        });
-
-        // Swiper for Testimonials
-        new Swiper('.testimonialSwiper', {
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
             },
-            autoplay: {
-                delay: 5000,
-            },
-            effect: 'fade',
+            {
+                threshold: 0.3
+            }
+        );
+
+
+    const statsGrid =
+        document.querySelector('.stats-grid');
+
+    if (statsGrid) {
+        counterObserver.observe(statsGrid);
+    }
+
+
+    /* =====================================================
+       AOS
+    ===================================================== */
+
+    AOS.init({
+
+        duration: 900,
+
+        once: true,
+
+        offset: 80,
+
+        easing: 'ease-out-cubic'
+
+    });
+
+
+    /* =====================================================
+       TESTIMONIAL SWIPER
+    ===================================================== */
+
+    new Swiper('.testimonialSwiper', {
+
+        loop: true,
+
+        slidesPerView: 1,
+
+        spaceBetween: 20,
+
+        autoplay: {
+            delay: 4500,
+            disableOnInteraction: false
+        },
+
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
+
+        effect: 'fade',
+
+        fadeEffect: {
+            crossFade: true
+        }
+
+    });
+
+
+    /* =====================================================
+       GALLERY LIGHTBOX
+    ===================================================== */
+
+    const galleryItems =
+        document.querySelectorAll('.gallery-item');
+
+    const lightbox =
+        document.getElementById('lightbox');
+
+    const lightboxImage =
+        document.getElementById('lightboxImage');
+
+    const lightboxCounter =
+        document.getElementById('lightboxCounter');
+
+    const lightboxCaption =
+        document.getElementById('lightboxCaption');
+
+    const lightboxClose =
+        document.getElementById('lightboxClose');
+
+    const lightboxPrev =
+        document.getElementById('lightboxPrev');
+
+    const lightboxNext =
+        document.getElementById('lightboxNext');
+
+
+    let currentImageIndex = 0;
+
+
+    function openLightbox(index) {
+
+        currentImageIndex = index;
+
+        updateLightbox();
+
+        lightbox.classList.add('active');
+
+        lightbox.setAttribute(
+            'aria-hidden',
+            'false'
+        );
+
+        document.body.style.overflow = 'hidden';
+
+    }
+
+
+    function closeLightbox() {
+
+        lightbox.classList.remove('active');
+
+        lightbox.setAttribute(
+            'aria-hidden',
+            'true'
+        );
+
+        document.body.style.overflow = '';
+
+    }
+
+
+    function updateLightbox() {
+
+        const item =
+            galleryItems[currentImageIndex];
+
+        if (!item) return;
+
+        const image =
+            item.querySelector('img');
+
+        if (!image) return;
+
+        lightboxImage.src =
+            image.src;
+
+        lightboxImage.alt =
+            image.alt;
+
+        lightboxCaption.textContent =
+            image.alt;
+
+        lightboxCounter.textContent =
+            `${currentImageIndex + 1} / ${galleryItems.length}`;
+
+    }
+
+
+    function showNextImage() {
+
+        currentImageIndex =
+            (currentImageIndex + 1)
+            % galleryItems.length;
+
+        updateLightbox();
+
+    }
+
+
+    function showPreviousImage() {
+
+        currentImageIndex =
+            (currentImageIndex - 1 + galleryItems.length)
+            % galleryItems.length;
+
+        updateLightbox();
+
+    }
+
+
+    galleryItems.forEach((item, index) => {
+
+        item.addEventListener('click', () => {
+
+            openLightbox(index);
+
         });
 
-        // Back to Top Button
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('show');
+    });
+
+
+    lightboxClose.addEventListener(
+        'click',
+        closeLightbox
+    );
+
+
+    lightboxNext.addEventListener(
+        'click',
+        showNextImage
+    );
+
+
+    lightboxPrev.addEventListener(
+        'click',
+        showPreviousImage
+    );
+
+
+    lightbox.addEventListener('click', (event) => {
+
+        if (event.target === lightbox) {
+
+            closeLightbox();
+
+        }
+
+    });
+
+
+    document.addEventListener('keydown', (event) => {
+
+        if (!lightbox.classList.contains('active')) {
+            return;
+        }
+
+        if (event.key === 'Escape') {
+            closeLightbox();
+        }
+
+        if (event.key === 'ArrowRight') {
+            showNextImage();
+        }
+
+        if (event.key === 'ArrowLeft') {
+            showPreviousImage();
+        }
+
+    });
+
+
+    /* =====================================================
+       TOUCH SWIPE FOR LIGHTBOX
+    ===================================================== */
+
+    let touchStartX = 0;
+
+    let touchEndX = 0;
+
+
+    lightbox.addEventListener(
+        'touchstart',
+        event => {
+
+            touchStartX =
+                event.changedTouches[0].screenX;
+
+        },
+        { passive: true }
+    );
+
+
+    lightbox.addEventListener(
+        'touchend',
+        event => {
+
+            touchEndX =
+                event.changedTouches[0].screenX;
+
+            const difference =
+                touchStartX - touchEndX;
+
+            if (Math.abs(difference) < 50) {
+                return;
+            }
+
+            if (difference > 0) {
+                showNextImage();
             } else {
-                backToTop.classList.remove('show');
+                showPreviousImage();
             }
+
+        },
+        { passive: true }
+    );
+
+
+    /* =====================================================
+       BACK TO TOP
+    ===================================================== */
+
+    const backToTop =
+        document.getElementById('backToTop');
+
+
+    window.addEventListener('scroll', () => {
+
+        if (window.scrollY > 400) {
+
+            backToTop.classList.add('show');
+
+        } else {
+
+            backToTop.classList.remove('show');
+
+        }
+
+    });
+
+
+    backToTop.addEventListener('click', () => {
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: 'smooth'
+
         });
 
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+    });
 
-        // Contact Form
-        document.querySelector('.contact-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            e.target.reset();
-        });
 
-        // Parallax Effect
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.hero');
-            if (parallax) {
-                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+    /* =====================================================
+       CONTACT FORM
+    ===================================================== */
+
+    const contactForm =
+        document.getElementById('contactForm');
+
+    const successMessage =
+        document.getElementById('successMessage');
+
+
+    contactForm.addEventListener('submit', event => {
+
+        event.preventDefault();
+
+        successMessage.style.display = 'block';
+
+        contactForm.reset();
+
+        setTimeout(() => {
+
+            successMessage.style.display = 'none';
+
+        }, 5000);
+
+    });
+
+
+    /* =====================================================
+       ACTIVE NAVIGATION LINK
+    ===================================================== */
+
+    const sections =
+        document.querySelectorAll('section[id]');
+
+    const navLinks =
+        document.querySelectorAll('.nav-link');
+
+
+    function updateActiveNav() {
+
+        let currentSection = '';
+
+        sections.forEach(section => {
+
+            const sectionTop =
+                section.offsetTop - 150;
+
+            const sectionBottom =
+                sectionTop + section.offsetHeight;
+
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionBottom
+            ) {
+
+                currentSection =
+                    section.id;
+
             }
+
         });
 
-        // Navbar active link on scroll
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
 
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
+        navLinks.forEach(link => {
+
+            link.classList.remove('active');
+
+            if (
+                link.getAttribute('href') ===
+                '#' + currentSection
+            ) {
+
+                link.classList.add('active');
+
+            }
+
         });
-    </script>
-</body>
-</html>
+
+    }
+
+
+    window.addEventListener(
+        'scroll',
+        updateActiveNav
+    );
+
+
+    /* =====================================================
+       CURRENT YEAR
+    ===================================================== */
+
+    document.getElementById(
+        'currentYear'
+    ).textContent =
+        new Date().getFullYear();
+
+
+    /* =====================================================
+       PREVENT BROKEN IMAGE LAYOUT
+       
+       If a new image doesn't exist, hide that gallery
+       card instead of showing a broken image icon.
+    ===================================================== */
+
+    document.querySelectorAll(
+        '.gallery-item img'
+    ).forEach(image => {
+
+        image.addEventListener('error', () => {
+
+            const card =
+                image.closest('.gallery-item');
+
+            if (card) {
+
+                card.style.display = 'none';
+
+            }
+
+        });
+
+    });
+
+</script>
